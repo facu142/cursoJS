@@ -64,25 +64,53 @@
 
 */
 
-let numero = Number(prompt('Ingrese un numero entero mayor que 1'));
+/* 
+    // Ejercicio 4
 
-let divisores = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        let numero = Number(prompt('Ingrese un numero entero mayor que 1'));
 
-function calcularSiEsPrimo(numero,divisores){
+        let divisores = [2, 3, 4, 5, 6, 7, 8, 9]
 
-    if (numero > 1) {
+        function calcularSiEsPrimo(numero,divisores){
 
-        for (let i = 0; i < divisores.length; i++){
-            if(numero % divisores[i] == 0 ){
-                return console.log(`${numero} es primo`);
-            }else if (numero % divisores !== 0 ){
-                return console.log(`${numero} no es primo`);
+            if (numero > 1) {
+
+                for (let i = 0; i < divisores.length; i++){
+                    let respuesta; 
+                    if (numero % divisores[i] === 0 ){
+                        respuesta = `${numero} no es número primo`
+                    }else{
+                        respuesta = `${numero} es número primo`
+                    }
+                return console.log(respuesta);
+                }
             }
         }
-    }
-}
+            
+        calcularSiEsPrimo(numero,divisores);
+
+*/
+
+
+
+const numero = Number(prompt('Ingrese un numero del 1 al 100'))
+
+
+function calcularFactorial(numero) {
     
-calcularSiEsPrimo(numero,divisores);
+    let numeros = [];
+
+    for (let i = numero - 1; i > 0; i--) {
+        numeros.push(i);
+    }
+
+    for (let i = 0; i < numeros.length; i++){
+    }
+
+}
+
+calcularFactorial(numero)
+
 
 
 
