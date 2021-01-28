@@ -1,5 +1,5 @@
 /* 
-    Ejercicio 1
+    //Ejercicio 1
 
         let nombre = prompt('Ingresá tu nombre');
         let edad = Number(prompt('Ingresá tu edad'));
@@ -47,6 +47,42 @@
 
 */
 
-let numeroMaximo = Number(prompt('Por favor ingrese un número del 1 al 100')) 
+/* 
+    // Ejercicio 3     
+
+        let numeroMaximo = Number(prompt('Por favor ingrese un número del 1 al 100'))
+
+        if(numeroMaximo <= 100){
+            for (let i = 1; i <= numeroMaximo; i++){
+                if (i % 2 === 0 ){
+                    console.log(`${i} es par`);
+                }else if(i % 2 != 0 ){
+                    console.log(`${i} es inpar`);
+                } 
+            }
+        }
+
+*/
+
+let numero = Number(prompt('Ingrese un numero entero mayor que 1'));
+
+let divisores = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+function calcularSiEsPrimo(numero,divisores){
+
+    if (numero > 1) {
+
+        for (let i = 0; i < divisores.length; i++){
+            if(numero % divisores[i] == 0 ){
+                return console.log(`${numero} es primo`);
+            }else if (numero % divisores !== 0 ){
+                return console.log(`${numero} no es primo`);
+            }
+        }
+    }
+}
+    
+calcularSiEsPrimo(numero,divisores);
+
 
 
