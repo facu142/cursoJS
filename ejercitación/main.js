@@ -91,26 +91,56 @@
 
 */
 
-
-
-const numero = Number(prompt('Ingrese un numero del 1 al 100'))
-
-
-function calcularFactorial(numero) {
+/*     
     
-    let numeros = [];
+    //Ejercicio 5    
 
-    for (let i = numero - 1; i > 0; i--) {
-        numeros.push(i);
+        let numero = Number(prompt('Ingrese un numero del 1 al 100'));
+
+        function calcularFactorial(numero) {
+
+            let resultado = 1;
+
+            for (let i = numero; i > 0;i--){
+                resultado *= i
+            }
+            console.log(`el factorial de ${numero} es ${resultado}`);
+        }
+
+        calcularFactorial(numero)
+
+*/
+
+/* 
+    //Ejercicio 6
+    
+        let serieDeNumeros = [];
+        let total = 0
+        let contador = 0
+        do {
+            let numero = Number(prompt('ingrese un número menor a 50'));
+            total += numero;
+            contador ++
+            if (total>=50){
+                console.log(`El total es ${total} luego de ${contador} números ingresados`);
+            }
+        } while (total < 50);
+
+*/
+
+let numeros = [13,22,42,11,65];
+let pares = [];
+let impares = [];
+
+for(let i=0 ; i < numeros.length ; i++ ){
+    resultado = numeros[i] * Math.ceil(Math.random() * 10);
+
+    if (resultado % 2 === 0 ){
+        pares.push(resultado);
     }
 
-    for (let i = 0; i < numeros.length; i++){
-    }
 
 }
-
-calcularFactorial(numero)
-
 
 
 
