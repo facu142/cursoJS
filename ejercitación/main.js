@@ -128,19 +128,70 @@
 
 */
 
-let numeros = [13,22,42,11,65];
-let pares = [];
-let impares = [];
+/* 
+    //Ejercicio
 
-for(let i=0 ; i < numeros.length ; i++ ){
-    resultado = numeros[i] * Math.ceil(Math.random() * 10);
+        let numeros = [13,22,42,11,65];
+        let pares = [];
+        let inpares = [];
 
-    if (resultado % 2 === 0 ){
-        pares.push(resultado);
-    }
+        for(let i=0 ; i < numeros.length ; i++ ){
+            
+            let numeroAleatorio =  generarNumeroAleatorio();
 
+            resultado = numeros[i] * numeroAleatorio
 
+            console.log(`El resultado de ${numeros[i]} * ${numeroAleatorio} es ${resultado}`);
+
+            if (resultado % 2 === 0 ){
+                pares.push(resultado);
+            }else if(resultado % 2 !== 0){
+                inpares.push(resultado);
+            }
+
+        }
+
+        console.log(`Los resultados pares son ${pares}`);
+        console.log(`Los resultados inpares son ${inpares}`);
+
+        function generarNumeroAleatorio(){
+            return Math.ceil(Math.random() * 10);
+        }
+
+*/
+
+/* 
+    //Ejercicio 8
+
+        const letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+
+        const dni = Number(prompt('Ingresá tu dni'));
+
+        digitosDni = dni.toString().length;
+
+        if (dni > 0 && digitosDni <= 8) {
+
+            let indice = dni % 23;
+            
+            console.log(`El numero correspondiente al ${dni} es ${letras[indice]}`);
+
+        } else if (digitosDni >= 8) {
+            console.log(`El numero ingresado no puede superar los 8 digitos`);
+        }
+
+*/
+
+const palabra = prompt('Por favor ingrese una palabra')
+
+const vocales = ['a','e','i','o','u'];
+
+for(let i = 0 ; i < palabra.length ; i++ ){
+
+    let contadorVocales;
+
+    for(let j = 0 ; vocales.length ;j++)
+        if (palabra[i] === vocales[j] ){
+            contadorVocales++        
+        }
+    
 }
-
-
-
