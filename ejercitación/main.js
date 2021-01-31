@@ -181,17 +181,52 @@
 
 */
 
-const palabra = prompt('Por favor ingrese una palabra')
+/* 
+    // Ejercicio 9
 
-const vocales = ['a','e','i','o','u'];
+        const palabra = prompt('Por favor ingrese una palabra');
 
-for(let i = 0 ; i < palabra.length ; i++ ){
+        const allVowels = ['a','e','i','o','u'];
 
-    let contadorVocales;
+        function contarVocales( str ){
+            let contadorVocales = 0;
 
-    for(let j = 0 ; vocales.length ;j++)
-        if (palabra[i] === vocales[j] ){
-            contadorVocales++        
+            for (let i of str.toLowerCase()){
+                if (allVowels.includes(i)){
+                    contadorVocales++
+                }
+            }
+            console.log(`El texto ingresado es ${str}`);
+            console.log(`La cantidad de vocales en el texto es ${contadorVocales}`);
+
         }
-    
+
+        contarVocales(palabra);
+
+*/
+
+
+
+let colores = ['azul', 'amarillo', 'rojo', 'verde', 'rosa']
+
+const color = prompt('Por favor introduce un color').toLowerCase();
+
+function  verificarColor(color){
+    for (let i = 0; i < colores.length; i++) {
+
+        if (color === colores[i]) {
+            
+            return console.log(`El color ${color} se encuentra en el array`); 
+        }else{
+            verificarColor(color);
+        }
+        
+    }
+
 }
+
+verificarColor(color);
+
+
+
+
