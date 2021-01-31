@@ -205,28 +205,32 @@
 
 */
 
+/* 
+    Ejercicio 10    
 
 
-let colores = ['azul', 'amarillo', 'rojo', 'verde', 'rosa']
+        let colores = ['azul', 'amarillo', 'rojo', 'verde', 'rosa']
 
-const color = prompt('Por favor introduce un color').toLowerCase();
+        const color = prompt('Por favor introduce un color').toLowerCase();
 
-function  verificarColor(color){
-    for (let i = 0; i < colores.length; i++) {
 
-        if (color === colores[i]) {
+        function  verificarColor(color){
+
             
-            return console.log(`El color ${color} se encuentra en el array`); 
-        }else{
-            verificarColor(color);
+            for (let i = 0; i < colores.length; i++) {
+
+                if (color === colores[i]) {
+                    
+                    return console.log(`El color ${color} se encuentra en el array`); 
+                }
+            
+            }
+
+            return console.log(`El color ${color} no se encuentra en el array`);
         }
-        
-    }
 
-}
+        verificarColor(color);
 
-verificarColor(color);
-
-
+*/
 
 
