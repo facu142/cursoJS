@@ -1,10 +1,10 @@
 {
   "name": "pagina",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/facu142/pagina#readme",
   "dependencies": {
-    "bootstrap": "^4.5.3",
+    "bootstrap": "^4.6.0",
     "jquery": "^3.5.1"
-  }
+  },
+  "description": ""
 }

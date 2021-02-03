@@ -128,10 +128,10 @@
 
 */
 
-/* 
-    //Ejercicio
+/*  
+    //Ejercicio 7
 
-        let numeros = [13,22,42,11,65];
+        const numeros = [13,22,42,11,65];
         let pares = [];
         let inpares = [];
 
