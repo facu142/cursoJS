@@ -25,6 +25,16 @@ Cercano
 */
 
 const parent = document.querySelector('#parent');
+// PADRE
+//console.log(parent.parentElement);
 
-console.log(parent.parentElement);
+// HIJOS
+//console.log(parent.children);
+//console.log(parent.firstElementChild);
+//console.log(parent.lastChild);
+//console.log(parent.lastElementChild);
+//console.log(parent.hasChildNodes());
+//console.log(parent.firstChild.hasChildNodes());
 
+console.log(parent.parentElement.nextElementSibling);
+console.log(parent.parentElement.previousElementSibling);
