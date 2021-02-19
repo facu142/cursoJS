@@ -10,7 +10,7 @@ $button.addEventListener('click', () => {
         xhr = new ActiveXObject('Microsoft.XMLHTTP');
     }
 
-    xhr.open('GET', 'https://jsonplaceholder.typicode.com/users');
+    xhr.open('GET','https://jsonplaceholder.typicode.com/users');
 
     xhr.addEventListener('load', (data) => {
         const dataJSON = JSON.parse(data.target.response);
@@ -25,4 +25,4 @@ $button.addEventListener('click', () => {
     })
 
     xhr.send();
-})
+});
