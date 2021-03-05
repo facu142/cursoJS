@@ -1,7 +1,6 @@
 const fileInput = document.querySelector('#file');
 const dropZone = document.querySelector('#drop-zone');
 
-
 dropZone.addEventListener('click' , () => {
     fileInput.click()
 })
@@ -18,8 +17,8 @@ dropZone.addEventListener('dragleave', (e)=>{
 
 dropZone.addEventListener('drop', (e) => {
     e.preventDefault();
-    console.log(e);
     fileInput.files = e.dataTransfer.files;
+    console.log(fileInput.files); 
 })
 
 fileInput.addEventListener('change' , () => {
