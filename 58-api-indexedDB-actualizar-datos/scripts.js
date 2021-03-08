@@ -13,6 +13,7 @@ if (indexedDB && form) {
         console.log('OPEN', db);
         readData();
     }
+
     request.onupgradeneeded = (e) => {
         db = e.target.result;
         console.log('CREATE', db);
@@ -25,31 +26,38 @@ if (indexedDB && form) {
     }
 
     const addData = (data) => {
-        // Nos devuelve un objeto de tipo transacción
-
-        const transaction = db.transaction('tasks', 'readwrite');
-
-        // Trabajamos con el método object Store, recibe como parametro el almacen que 
-        // vamos a utilizar
+        const transaction = db.transaction(['tasks'], 'readwrite');
         const objectStore = transaction.objectStore('tasks');
         const request = objectStore.add(data);
         readData();
     }
 
     const getData = (key) => {
-        const transaction = db.transaction('tasks' , 'readwrite');
+        const transaction = db.transaction(['tasks'] , 'readwrite');
         const objectStore = transaction.objectStore('tasks');
         const request = objectStore.get(key);
         
         request.onsuccess = () => {
             form.task.value = request.result.taskTitle;
             form.priority.value = request.result.taskPriority;
+            form.button.dataset.action = 'update'; 
+            form.button.textContent = 'Update task'
         }
     }
 
+    const updateData = (data) => {
+        const transaction = db.transaction(['tasks'], 'readwrite');
+        const objectStore = transaction.objectStore('tasks');
+        const request = objectStore.put(data);
+        request.onsuccess = () => {
+            form.button.dataset.action = 'add';
+            form.button.textContent = 'Add task'
+            readData();
+        }
+    }
 
     const readData = () => {
-        const transaction = db.transaction('tasks', 'readonly');
+        const transaction = db.transaction(['tasks'], 'readonly');
         const objectStore = transaction.objectStore('tasks');
         const request = objectStore.openCursor();
         const fragment = document.createDocumentFragment();
@@ -67,11 +75,13 @@ if (indexedDB && form) {
 
                 const taskUpdate = document.createElement('button');
                 taskUpdate.dataset.type = 'update';
+                taskUpdate.dataset.key = cursor.key;
                 taskUpdate.textContent = 'Update';
                 fragment.appendChild(taskUpdate);
 
                 const taskDelate = document.createElement('button');
                 taskDelate.textContent = 'Delate';
+                fragment.appendChild(taskDelate);
 
                 cursor.continue()
             }else{
@@ -83,15 +93,24 @@ if (indexedDB && form) {
     }
 
     form.addEventListener('submit', (e) => {
-
         e.preventDefault();
         const data = {
             taskTitle: e.target.task.value,
             taskPriority: e.target.priority.value
         }
-        addData(data)
+        
+        if(e.target.button.dataset.action == 'add'){
+            addData(data);
+        }else if (e.target.button.dataset.action == 'update'){
+            updateData(data);
+        }
+        form.reset();   
+    })
 
-        console.log(data);
+    tasks.addEventListener('click', (e) => {
+        if(e.target.dataset.type == 'update'){
+            getData(e.target.dataset.key);
+        }
     })
 
 }
