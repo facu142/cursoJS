@@ -23,10 +23,6 @@ const callback = (entries) => {
     });
 }
 
-
-
-
-
 const setObserver = () => {
     const options = {
         threshold:0.25
