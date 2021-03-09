@@ -15,7 +15,7 @@ body {
   position: relative;
 }
 
-/* .box::after {
+.box::after {
   content: "50%";
   position: absolute;
   top: 0;
@@ -27,7 +27,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-} */
+} 
 
 img {
   max-width: 100%;
